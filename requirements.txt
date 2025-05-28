@@ -1,7 +1,8 @@
-flask==3.1.1
-flask-wtf==1.2.2
-python-dotenv==1.1.0
-openai==1.82.0
-wtforms==3.2.1
-flask-sqlalchemy==3.1.1
-sqlalchemy==2.0.41
+flask==2.3.3
+flask-wtf==1.1.1
+python-dotenv==1.0.0
+openai==0.27.8
+wtforms==3.0.1
+flask-sqlalchemy==3.0.3
+sqlalchemy==1.4.41
+werkzeug==2.3.7

@@ -1,4 +1,4 @@
-from openai import OpenAI
+import openai
 import json
 from typing import Dict
 from dotenv import load_dotenv
@@ -7,18 +7,18 @@ import os
 load_dotenv()
 
 apiKey = os.getenv("OPENAI_API_KEY")
-client = OpenAI(api_key=apiKey)
+openai.api_key = apiKey
 
 
 class RecipeGenerator:
     def __init__(self, api_key: str):
-        self.client = OpenAI(api_key=api_key)
+        openai.api_key = api_key
 
     def generate_recipe(self, ingredients: str = None, cuisine: str = None) -> Dict:
         prompt = self._create_prompt(ingredients, cuisine)
 
         try:
-            response = self.client.chat.completions.create(
+            response = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
                 messages=[
                     {
@@ -47,8 +47,6 @@ class RecipeGenerator:
 
 
 def main():
-    # Replace with your OpenAI API key
-
     recipe_gen = RecipeGenerator(apiKey)
 
     print("Welcome to Recipe Generator!")
