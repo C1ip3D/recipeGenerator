@@ -5,4 +5,4 @@ openai==0.27.8
 wtforms==3.0.1
 flask-sqlalchemy==3.0.3
 sqlalchemy==1.4.41
-werkzeug==2.3.7
+werkzeug==2.3.8
